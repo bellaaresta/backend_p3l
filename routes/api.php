@@ -61,18 +61,18 @@ Route::get('transaksi', 'Api\TransaksiController@index');
     Route::put('transaksi/{id}', 'Api\TransaksiController@update');
     Route::delete('transaksi/{id}', 'Api\TransaksiController@destroy');
 
+Route::get('jadwalshift', 'Api\JadwalShiftControler@index');
+    Route::get('jadwalshift/{id}', 'Api\JadwalShiftController@show');
+    Route::post('jadwalshift', 'Api\JadwalShiftController@store');
+    Route::put('jadwalshift/{id}', 'Api\JadwalShiftController@update');
+    Route::delete('jadwalshift/{id}', 'Api\JadwalShiftController@destroy');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::post('register', 'Api\AuthController@register');
-Route::post('login', 'Api\AuthController@login');
-
-Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('detailjadwal', 'Api\DetailJadwalController@index');
+Route::get('detailjadwal', 'Api\DetailJadwalController@index');
     Route::get('detailjadwal/{id}', 'Api\DetailJadwalController@show');
     Route::post('detailjadwal', 'Api\DetailJadwalController@store');
     Route::put('detailjadwal/{id}', 'Api\DetailJadwalController@update');
     Route::delete('detailjadwal/{id}', 'Api\DetailJadwalController@destroy');
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });

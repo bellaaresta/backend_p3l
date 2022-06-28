@@ -38,7 +38,7 @@ class DetailJadwalController extends Controller
         }
 
         return response([
-            'message' => 'Promo Not Found',
+            'message' => 'Detail Jadwal Not Found',
             'data' => null
         ], 404);
     }
@@ -64,7 +64,7 @@ class DetailJadwalController extends Controller
 
     public function destroy($id)
     {
-        $detailjadwals = Promo::find($id);
+        $detailjadwals = DetailJadwal::find($id);
 
         if(is_null($detailjadwals)) {
             return response([
